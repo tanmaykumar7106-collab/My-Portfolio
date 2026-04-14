@@ -1,14 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import "./App.css";
 import profile from "./assets/profile.jpg";
 
 export default function App() {
-  const roles = ["AI/ML Developer", "LLM Explorer", "Full Stack Developer"];
+
+  // ✅ FIXED (useMemo for Vercel error)
+  const roles = useMemo(() => [
+    "AI/ML Developer",
+    "LLM Explorer",
+    "Full Stack Developer"
+  ], []);
+
   const [text, setText] = useState("");
   const [i, setI] = useState(0);
   const [j, setJ] = useState(0);
 
-  // Typing Animation
+  // ✅ Typing Animation (FIXED)
   useEffect(() => {
     if (j < roles[i].length) {
       const t = setTimeout(() => {
@@ -24,7 +31,7 @@ export default function App() {
       }, 1500);
       return () => clearTimeout(t);
     }
-  }, [j, i]);
+  }, [j, i, roles]); // ✅ FIXED dependency
 
   // Scroll Animation
   useEffect(() => {
@@ -81,18 +88,18 @@ export default function App() {
         <h2>About <span>Me</span></h2>
 
         <p>
-          Hi, I’m <b>Tanmay Kumar</b>, a passionate 2nd-year Computer Science and Engineering student
-          specializing in Artificial Intelligence and Machine Learning (AI/ML) at UCER.
+          Hi, I’m <b>Tanmay Kumar</b>, a 2nd-year Computer Science and Engineering student
+          specializing in Artificial Intelligence and Machine Learning (AI/ML).
         </p>
 
         <p>
           I enjoy building innovative applications that combine technology and creativity.
-          My interests lie in AI, NLP, and full-stack development.
+          My interests include AI, NLP, and full-stack development.
         </p>
 
         <p>
-          I am currently exploring Generative AI and Large Language Models (LLMs),
-          aiming to build impactful real-world solutions.
+          Currently exploring Generative AI and Large Language Models (LLMs)
+          to build impactful real-world solutions.
         </p>
       </section>
 
@@ -102,22 +109,22 @@ export default function App() {
 
         <div className="skill">
           <p>Python</p>
-          <div className="bar"><div style={{width:"90%"}}></div></div>
+          <div className="bar"><div style={{ width: "90%" }}></div></div>
         </div>
 
         <div className="skill">
           <p>JavaScript</p>
-          <div className="bar"><div style={{width:"80%"}}></div></div>
+          <div className="bar"><div style={{ width: "80%" }}></div></div>
         </div>
 
         <div className="skill">
           <p>React</p>
-          <div className="bar"><div style={{width:"75%"}}></div></div>
+          <div className="bar"><div style={{ width: "75%" }}></div></div>
         </div>
 
         <div className="skill">
           <p>AI / ML</p>
-          <div className="bar"><div style={{width:"70%"}}></div></div>
+          <div className="bar"><div style={{ width: "70%" }}></div></div>
         </div>
       </section>
 
@@ -127,12 +134,10 @@ export default function App() {
 
         <div className="card big">
           <h3>Scam Call Detector</h3>
-
           <p>
             AI-based system that detects fraudulent calls by analyzing audio
             and identifying scam patterns like OTP requests and urgency.
           </p>
-
           <p className="tech">
             Python • NLP • SpeechRecognition • PyAudio
           </p>
@@ -144,12 +149,10 @@ export default function App() {
 
         <div className="card big">
           <h3>AI Interview Q&A Generator</h3>
-
           <p>
             AI-powered system that generates interview questions and answers
             based on resume data using LLMs.
           </p>
-
           <p className="tech">
             Python • LangChain • Ollama • Mistral LLM
           </p>
