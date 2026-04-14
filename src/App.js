@@ -1,173 +1,186 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import profile from "./assets/profile.jpg";
 
-// ---------------- Button ----------------
-const btnStyle = {
-  padding: "10px 20px",
-  borderRadius: "12px",
-  background: "linear-gradient(45deg, #00c6ff, #0072ff)",
-  color: "white",
-  border: "none",
-  cursor: "pointer",
-  margin: "6px",
-  fontWeight: "bold"
-};
-
-// ---------------- Back Button ----------------
-const BackButton = () => {
-  const navigate = useNavigate();
-  return <button onClick={() => navigate("/")} style={btnStyle}>⬅ Home</button>;
-};
-
-// ---------------- Layout ----------------
-const CenterBox = ({ children }) => (
-  <div className="center">
-    <div className="box">{children}</div>
-  </div>
-);
-
-// ---------------- Home ----------------
-function Home() {
+export default function App() {
+  const roles = ["AI/ML Developer", "LLM Explorer", "Full Stack Developer"];
   const [text, setText] = useState("");
   const [i, setI] = useState(0);
   const [j, setJ] = useState(0);
-  const navigate = useNavigate();
 
+  // Typing Animation
   useEffect(() => {
-    const roles = ["AI/ML Enthusiast", "Full Stack Developer"];
-
     if (j < roles[i].length) {
       const t = setTimeout(() => {
         setText(prev => prev + roles[i][j]);
         setJ(j + 1);
-      }, 80);
+      }, 70);
       return () => clearTimeout(t);
     } else {
-      const timeout = setTimeout(() => {
+      const t = setTimeout(() => {
         setText("");
         setJ(0);
-        setI((prev) => (prev + 1) % roles.length);
+        setI((i + 1) % roles.length);
       }, 1500);
-      return () => clearTimeout(timeout);
+      return () => clearTimeout(t);
     }
-  }, [j, i]); // ✅ FIXED (no warning)
+  }, [j, i]);
+
+  // Scroll Animation
+  useEffect(() => {
+    const reveal = () => {
+      document.querySelectorAll(".reveal").forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          el.classList.add("active");
+        }
+      });
+    };
+    window.addEventListener("scroll", reveal);
+    reveal();
+  }, []);
 
   return (
-    <CenterBox>
-      <h1>Hello 👋</h1>
-      <h2>I'm Tanmay Kumar</h2>
-      <h3 className="typing">{text}|</h3>
+    <div className="app">
 
-      <div>
-        <button style={btnStyle} onClick={() => navigate("/about")}>About</button>
-        <button style={btnStyle} onClick={() => navigate("/projects")}>Projects</button>
-        <button style={btnStyle} onClick={() => navigate("/contact")}>Contact</button>
-      </div>
-    </CenterBox>
-  );
-}
+      {/* HERO */}
+      <section id="home" className="hero">
+        <div className="hero-left">
+          <h4>Hello, I am</h4>
+          <h1>Tanmay Kumar</h1>
+          <h2 className="typing">{text}|</h2>
 
-// ---------------- About ----------------
-function About() {
-  return (
-    <CenterBox>
-      <BackButton />
-      <h2>About Me</h2>
+          <p className="hero-desc">
+            Aspiring Software Engineer focused on AI/ML, LLMs and scalable applications.
+          </p>
 
-      <p>
-        Hi, I’m Tanmay Kumar, a passionate 2nd-year Computer Science and Engineering (AI/ML) student.
-        I enjoy building innovative solutions that combine technology and creativity.
-      </p>
+          <p className="location">Based in India 🇮🇳</p>
 
-      <h3>Skills 🚀</h3>
+          <div className="buttons">
+            <a href="https://github.com/tanmaykumar7106-collab" target="_blank" rel="noreferrer">
+              <button>GitHub</button>
+            </a>
 
-      <div className="skill">
-        <p>React</p>
-        <div className="bar"><div style={{ width: "80%" }}></div></div>
-      </div>
+            <a href="https://www.linkedin.com/in/tanmay-kumar-6a19ba2b5/" target="_blank" rel="noreferrer">
+              <button>LinkedIn</button>
+            </a>
 
-      <div className="skill">
-        <p>Python</p>
-        <div className="bar"><div style={{ width: "85%" }}></div></div>
-      </div>
+            <a href="https://1drv.ms/w/c/a7a97f6282f24a95/IQAQ4lYEuAjfS7gjhJo0wtWMAQcVRiRPcK-sgbZZ4jcytGU?e=0TaMrB" target="_blank" rel="noreferrer">
+              <button>Resume</button>
+            </a>
+          </div>
+        </div>
 
-      <div className="skill">
-        <p>Node.js</p>
-        <div className="bar"><div style={{ width: "70%" }}></div></div>
-      </div>
+        <div className="hero-right">
+          <img src={profile} alt="profile" className="profile-img" />
+        </div>
+      </section>
 
-      <div className="skill">
-        <p>AI/ML</p>
-        <div className="bar"><div style={{ width: "75%" }}></div></div>
-      </div>
-    </CenterBox>
-  );
-}
+      {/* ABOUT */}
+      <section id="about" className="section glass reveal">
+        <h2>About <span>Me</span></h2>
 
-// ---------------- Projects ----------------
-const projectList = [
-  {
-    name: "Scam Detector App",
-    description: "AI/ML-based scam detection system built using Google Colab.",
-    link: "https://github.com/tanmaykumar7106-collab/Tanmay-Kumar"
-  },
-  {
-    name: "Portfolio Website",
-    description: "Personal portfolio built using React and deployed on Vercel.",
-    link: "https://github.com/tanmaykumar7106-collab/tanmaykumar-portfolio"
-  }
-];
+        <p>
+          Hi, I’m <b>Tanmay Kumar</b>, a passionate 2nd-year Computer Science and Engineering student
+          specializing in Artificial Intelligence and Machine Learning (AI/ML) at UCER.
+        </p>
 
-function Projects() {
-  return (
-    <CenterBox>
-      <BackButton />
-      <h2>Projects 💼</h2>
+        <p>
+          I enjoy building innovative applications that combine technology and creativity.
+          My interests lie in AI, NLP, and full-stack development.
+        </p>
 
-      {projectList.map((p, index) => (
-        <div key={index} className="card">
-          <h3>{p.name}</h3>
-          <p>{p.description}</p>
+        <p>
+          I am currently exploring Generative AI and Large Language Models (LLMs),
+          aiming to build impactful real-world solutions.
+        </p>
+      </section>
 
-          <a href={p.link} target="_blank" rel="noreferrer">
-            <button style={btnStyle}>🔗 GitHub</button>
+      {/* SKILLS */}
+      <section id="skills" className="section reveal">
+        <h2>My <span>Skills</span></h2>
+
+        <div className="skill">
+          <p>Python</p>
+          <div className="bar"><div style={{width:"90%"}}></div></div>
+        </div>
+
+        <div className="skill">
+          <p>JavaScript</p>
+          <div className="bar"><div style={{width:"80%"}}></div></div>
+        </div>
+
+        <div className="skill">
+          <p>React</p>
+          <div className="bar"><div style={{width:"75%"}}></div></div>
+        </div>
+
+        <div className="skill">
+          <p>AI / ML</p>
+          <div className="bar"><div style={{width:"70%"}}></div></div>
+        </div>
+      </section>
+
+      {/* PROJECTS */}
+      <section id="projects" className="section reveal">
+        <h2>My <span>Projects</span></h2>
+
+        <div className="card big">
+          <h3>Scam Call Detector</h3>
+
+          <p>
+            AI-based system that detects fraudulent calls by analyzing audio
+            and identifying scam patterns like OTP requests and urgency.
+          </p>
+
+          <p className="tech">
+            Python • NLP • SpeechRecognition • PyAudio
+          </p>
+
+          <a href="https://github.com/tanmaykumar7106-collab/Tanmay-Kumar" target="_blank" rel="noreferrer">
+            <button>GitHub</button>
           </a>
         </div>
-      ))}
-    </CenterBox>
-  );
-}
 
-// ---------------- Contact ----------------
-function Contact() {
-  return (
-    <CenterBox>
-      <BackButton />
-      <h2>Contact ✉</h2>
+        <div className="card big">
+          <h3>AI Interview Q&A Generator</h3>
 
-      <p>Email: tanmay@example.com</p>
+          <p>
+            AI-powered system that generates interview questions and answers
+            based on resume data using LLMs.
+          </p>
 
-      <p>
-        GitHub:{" "}
-        <a href="https://github.com/tanmaykumar7106-collab" target="_blank" rel="noreferrer">
-          Visit Profile
-        </a>
-      </p>
-    </CenterBox>
-  );
-}
+          <p className="tech">
+            Python • LangChain • Ollama • Mistral LLM
+          </p>
+        </div>
+      </section>
 
-// ---------------- App ----------------
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
+      {/* CERTIFICATES */}
+      <section id="certificates" className="section reveal">
+        <h2>My <span>Certificates</span></h2>
+
+        <div className="card">
+          <h3>Generative AI using NLP</h3>
+          <p>60 Hours • August 2025</p>
+          <p>United Global Infoservice Pvt. Ltd.</p>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        <p>© 2026 Tanmay Kumar • Built with React ⚛</p>
+      </footer>
+
+      {/* NAVBAR */}
+      <div className="navbar">
+        <a href="#home">🏠</a>
+        <a href="#about">👤</a>
+        <a href="#skills">⚙</a>
+        <a href="#projects">💻</a>
+        <a href="#certificates">📜</a>
+      </div>
+
+    </div>
   );
 }
