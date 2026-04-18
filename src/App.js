@@ -8,7 +8,6 @@ export default function App() {
   const roles = useMemo(() => [
     "AI/ML Developer",
     "LLM Explorer",
-    "Full Stack Developer"
   ], []);
 
   const [text, setText] = useState("");
