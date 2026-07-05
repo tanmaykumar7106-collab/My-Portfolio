@@ -156,6 +156,17 @@ export default function App() {
             Python • LangChain • Ollama • Mistral LLM
           </p>
         </div>
+              <div className="card big">
+          <h3>AskMyNotes-AI</h3>
+          <p>
+            I built a RAG-based document Q&A system that retrieves relevant 
+            context from user-provided notes using vector embeddings and generates 
+            accurate answers using an LLM, reducing hallucination.
+          </p>
+          <p className="tech">
+            Python • LangChain • Streamlit • FAISS • HuggingFace Embeddings • llama3/gemma3/mistral
+          </p>
+        </div>
       </section>
 
       {/* CERTIFICATES */}
