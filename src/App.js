@@ -71,7 +71,7 @@ export default function App() {
               <button>LinkedIn</button>
             </a>
 
-            <a href="https://1drv.ms/w/c/a7a97f6282f24a95/IQAQ4lYEuAjfS7gjhJo0wtWMAQcVRiRPcK-sgbZZ4jcytGU?e=0TaMrB" target="_blank" rel="noreferrer">
+            <a href="https://drive.google.com/drive/folders/1R8gdEztDfPMLcJyvd5DkeM6iNw7KdMTr" target="_blank" rel="noreferrer">
               <button>Resume</button>
             </a>
           </div>
@@ -87,7 +87,7 @@ export default function App() {
         <h2>About <span>Me</span></h2>
 
         <p>
-          Hi, I’m <b>Tanmay Kumar</b>, a 2nd-year Computer Science and Engineering student
+          Hi, I’m <b>Tanmay Kumar</b>, a 3rd-year Computer Science and Engineering student
           specializing in Artificial Intelligence and Machine Learning (AI/ML).
         </p>
 
@@ -112,6 +112,16 @@ export default function App() {
         </div>
 
         <div className="skill">
+          <p>Streamlit</p>
+          <div className="bar"><div style={{ width: "80%" }}></div></div>
+        </div>
+
+        <div className="skill">
+          <p>CSS</p>
+          <div className="bar"><div style={{ width: "70%" }}></div></div>
+        </div>
+
+        <div className="skill">
           <p>JavaScript</p>
           <div className="bar"><div style={{ width: "80%" }}></div></div>
         </div>
@@ -122,8 +132,8 @@ export default function App() {
         </div>
 
         <div className="skill">
-          <p>AI / ML</p>
-          <div className="bar"><div style={{ width: "70%" }}></div></div>
+          <p>LLM Models</p>
+          <div className="bar"><div style={{ width: "30%" }}></div></div>
         </div>
       </section>
 
@@ -145,27 +155,21 @@ export default function App() {
             <button>GitHub</button>
           </a>
         </div>
-
-        <div className="card big">
-          <h3>AI Interview Q&A Generator</h3>
-          <p>
-            AI-powered system that generates interview questions and answers
-            based on resume data using LLMs.
-          </p>
-          <p className="tech">
-            Python • LangChain • Ollama • Mistral LLM
-          </p>
-        </div>
+              
               <div className="card big">
           <h3>AskMyNotes-AI</h3>
           <p>
             I built a RAG-based document Q&A system that retrieves relevant 
             context from user-provided notes using vector embeddings and generates 
             accurate answers using an LLM, reducing hallucination.
+            Currently Ongoing....
           </p>
           <p className="tech">
             Python • LangChain • Streamlit • FAISS • HuggingFace Embeddings • llama3/gemma3/mistral
           </p>
+            <a href="https://github.com/tanmaykumar7106-collab/AskMyNotes-AI" target="_blank" rel="noreferrer">
+            <button>GitHub</button>
+          </a>
         </div>
       </section>
 
