@@ -71,7 +71,7 @@ export default function App() {
               <button>LinkedIn</button>
             </a>
 
-            <a href="https://drive.google.com/drive/folders/1R8gdEztDfPMLcJyvd5DkeM6iNw7KdMTr" target="_blank" rel="noreferrer">
+            <a href="https://1drv.ms/w/c/a7a97f6282f24a95/IQChTHj3dBmnSrMw1UiQMh1rAX9QQc_FU5jCMX_GvOrtqvA?e=asOtcE" target="_blank" rel="noreferrer">
               <button>Resume</button>
             </a>
           </div>
