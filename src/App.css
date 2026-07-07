@@ -61,22 +61,45 @@ button {
 }
 
 /* SKILLS */
-.skill {
-  margin: 20px auto;
-  max-width: 400px;
-  text-align: left;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
 }
 
-.bar {
-  height: 8px;
-  background: #222;
-  border-radius: 10px;
+.skill-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 24px;
+  transition: 0.3s ease;
 }
 
-.bar div {
-  height: 100%;
-  background: #00c6ff;
-  border-radius: 10px;
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+.skill-card h3 {
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(59,130,246,.12);
+  color: var(--text);
+  font-size: .9rem;
+  font-weight: 500;
+  border: 1px solid rgba(59,130,246,.25);
 }
 
 /* CARD */
