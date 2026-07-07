@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from "react";
 import "./App.css";
-import profile from "./assets/profile.jpg";
+import profile from "./assets/preview.jpg";
 
 export default function App() {
 
@@ -92,8 +92,10 @@ export default function App() {
         </p>
 
         <p>
-          I enjoy building innovative applications that combine technology and creativity.
-          My interests include AI, NLP, and full-stack development.
+          Artificial Intelligence and Machine Learning undergraduate with strong skills in Python, Natural Language Processing, and
+          Data Analysis. Hands-on experience in building AI-driven projects, including Generative AI and NLP applications. Quick
+          learner with strong analytical and problemsolving abilities, seeking an opportunity to contribute technical expertise while
+          gaining practical industry experience.
         </p>
 
         <p>
@@ -103,55 +105,100 @@ export default function App() {
       </section>
 
       {/* SKILLS */}
-      <section id="skills" className="section reveal">
-        <h2>My <span>Skills</span></h2>
+<section id="skills" className="section reveal">
+  <h2>
+    Technical <span>Skills</span>
+  </h2>
 
-        <div className="skill">
-          <p>Python</p>
-          <div className="bar"><div style={{ width: "90%" }}></div></div>
-        </div>
+  <div className="skills-grid">
 
-        <div className="skill">
-          <p>Streamlit</p>
-          <div className="bar"><div style={{ width: "80%" }}></div></div>
-        </div>
+    <div className="skill-card">
+      <h3>💻 Languages</h3>
+      <div className="skill-tags">
+        <span>Python</span>
+        <span>JavaScript (ES6+)</span>
+        <span>HTML5</span>
+        <span>CSS3</span>
+      </div>
+    </div>
 
-        <div className="skill">
-          <p>CSS</p>
-          <div className="bar"><div style={{ width: "70%" }}></div></div>
-        </div>
+    <div className="skill-card">
+      <h3>⚛️ Frontend</h3>
+      <div className="skill-tags">
+        <span>React.js</span>
+        <span>Vite</span>
+        <span>Tailwind CSS</span>
+        <span>React Router</span>
+        <span>Axios</span>
+        <span>Recharts</span>
+      </div>
+    </div>
 
-        <div className="skill">
-          <p>JavaScript</p>
-          <div className="bar"><div style={{ width: "80%" }}></div></div>
-        </div>
+    <div className="skill-card">
+      <h3>🖥️ Backend</h3>
+      <div className="skill-tags">
+        <span>Node.js</span>
+        <span>Express.js</span>
+        <span>REST APIs</span>
+        <span>JWT Authentication</span>
+      </div>
+    </div>
 
-        <div className="skill">
-          <p>React</p>
-          <div className="bar"><div style={{ width: "75%" }}></div></div>
-        </div>
+    <div className="skill-card">
+      <h3>🗄️ Database</h3>
+      <div className="skill-tags">
+        <span>MongoDB</span>
+        <span>MongoDB Atlas</span>
+        <span>Mongoose</span>
+        <span>ChromaDB</span>
+      </div>
+    </div>
 
-        <div className="skill">
-          <p>LLM Models</p>
-          <div className="bar"><div style={{ width: "30%" }}></div></div>
-        </div>
-      </section>
+    <div className="skill-card">
+      <h3>🤖 AI & Machine Learning</h3>
+      <div className="skill-tags">
+        <span>Generative AI</span>
+        <span>RAG</span>
+        <span>LangChain</span>
+        <span>Ollama</span>
+        <span>Prompt Engineering</span>
+        <span>Sentence Transformers</span>
+        <span>NLP</span>
+      </div>
+    </div>
+
+    <div className="skill-card">
+      <h3>🛠️ Tools</h3>
+      <div className="skill-tags">
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>Vercel</span>
+        <span>Postman</span>
+        <span>VS Code</span>
+        <span>Streamlit</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       {/* PROJECTS */}
       <section id="projects" className="section reveal">
         <h2>My <span>Projects</span></h2>
 
         <div className="card big">
-          <h3>Scam Call Detector</h3>
+          <h3>LaunchStack OpsHub</h3>
           <p>
-            AI-based system that detects fraudulent calls by analyzing audio
-            and identifying scam patterns like OTP requests and urgency.
+            AI-powered business operations platform built with the MERN stack.
+        Features secure authentication, client/project management, analytics dashboard,
+        SOP library, reports, and an AI Copilot powered by a local LLM.
           </p>
           <p className="tech">
-            Python • NLP • SpeechRecognition • PyAudio
+            React • Node.js • Express • MongoDB Atlas • JWT • TailwindCSS • Ollama • Vercel
           </p>
-
-          <a href="https://github.com/tanmaykumar7106-collab/Tanmay-Kumar" target="_blank" rel="noreferrer">
+          <a href="https://launchstack-opshub-pate.vercel.app/" target="_blank" rel="noreferrer">
+            <button>Live Demo</button>
+          <a href="https://github.com/tanmaykumar7106-collab/launchstack-opshub" target="_blank" rel="noreferrer">
             <button>GitHub</button>
           </a>
         </div>
@@ -165,7 +212,7 @@ export default function App() {
             Currently Ongoing....
           </p>
           <p className="tech">
-            Python • LangChain • Streamlit • FAISS • HuggingFace Embeddings • llama3/gemma3/mistral
+            Python • LangChain • Streamlit • FAISS • HuggingFace Embeddings • Ollama ( llama3 )
           </p>
             <a href="https://github.com/tanmaykumar7106-collab/AskMyNotes-AI" target="_blank" rel="noreferrer">
             <button>GitHub</button>
@@ -181,6 +228,11 @@ export default function App() {
           <h3>Generative AI using NLP</h3>
           <p>60 Hours • August 2025</p>
           <p>United Global Infoservice Pvt. Ltd.</p>
+        </div>
+        <div className="card">
+          <h3>AI for Students: Build Your Own Generative AI Model</h3>
+          <p>45 Hours • June 2025</p>
+          <p>NxtWave Workshop.</p>
         </div>
       </section>
 
