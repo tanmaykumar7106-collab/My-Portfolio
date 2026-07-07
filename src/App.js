@@ -198,6 +198,7 @@ export default function App() {
           </p>
           <a href="https://launchstack-opshub-pate.vercel.app/" target="_blank" rel="noreferrer">
             <button>Live Demo</button>
+        </a>
           <a href="https://github.com/tanmaykumar7106-collab/launchstack-opshub" target="_blank" rel="noreferrer">
             <button>GitHub</button>
           </a>
