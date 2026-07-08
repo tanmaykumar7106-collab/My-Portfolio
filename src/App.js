@@ -71,7 +71,7 @@ export default function App() {
               <button>LinkedIn</button>
             </a>
 
-            <a href="https://1drv.ms/w/c/a7a97f6282f24a95/IQChTHj3dBmnSrMw1UiQMh1rAX9QQc_FU5jCMX_GvOrtqvA?e=asOtcE" target="_blank" rel="noreferrer">
+            <a href="https://1drv.ms/w/c/a7a97f6282f24a95/IQBlQ0JzXLwSQrnOglT4MnnEAVWJoOucuS6gTK9O92b2fys?e=AXKG75" target="_blank" rel="noreferrer">
               <button>Resume</button>
             </a>
           </div>
