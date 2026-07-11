@@ -71,7 +71,7 @@ export default function App() {
               <button>LinkedIn</button>
             </a>
 
-            <a href="https://1drv.ms/w/c/a7a97f6282f24a95/IQBlQ0JzXLwSQrnOglT4MnnEAVWJoOucuS6gTK9O92b2fys?e=AXKG75" target="_blank" rel="noreferrer">
+            <a href="https://drive.google.com/file/d/10iCwoVTHpy09nQhhEKgJAGlkrGeRt-gQ/view?usp=sharing" target="_blank" rel="noreferrer">
               <button>Resume</button>
             </a>
           </div>
@@ -213,6 +213,21 @@ export default function App() {
             Python • LangChain • Streamlit • FAISS • HuggingFace Embeddings • Ollama ( llama3 )
           </p>
             <a href="https://github.com/tanmaykumar7106-collab/AskMyNotes-AI" target="_blank" rel="noreferrer">
+            <button>GitHub</button>
+          </a>
+        </div>
+              <div className="card big">
+          <h3>CodeMentor-AI</h3>
+          <p>
+            CodeMentor AI is an AI-powered desktop application that helps students and developers improve their programming skills 
+            through intelligent code analysis, automated software testing, and guided problem solving. 
+            Powered by IBM Granite and Ollama, the application provides AI-assisted feedback to enhance code quality 
+            and strengthen problem-solving abilities.
+          </p>
+          <p className="tech">
+            Python • IBM Granite (Local) • Streamlit • Pandas • Matplotlib • Ollama API (Cloud/Local)
+          </p>
+            <a href="https://github.com/tanmaykumar7106-collab/CodeMentor-AI" target="_blank" rel="noreferrer">
             <button>GitHub</button>
           </a>
         </div>
