@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-html {
-  background: #050816;
+html, body, #root {
+  min-height: 100%;
 }
 
 body {
@@ -11,32 +10,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-button,
-input,
-textarea,
-select {
+button, input, textarea, select {
   font: inherit;
-}
-
-::selection {
-  background: rgba(56, 189, 248, 0.28);
-  color: #fff;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #050816;
-}
-
-::-webkit-scrollbar-thumb {
-  border: 3px solid #050816;
-  border-radius: 999px;
-  background: #263653;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #344968;
 }
