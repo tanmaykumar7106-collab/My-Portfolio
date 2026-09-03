@@ -181,7 +181,7 @@ export default function App() {
               <p className="tech">React • Node.js • Express • MongoDB Atlas • Gemini API • YOLOv8s • FastAPI • Cloudinary</p>
               <div className="project-actions">
                 <a className="project-link" href="https://github.com/tanmaykumar7106-collab/CityPulse-AI" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
-                <span className="project-status disabled-demo">Live Demo — Not deployed</span>
+                <a className="project-link" href="https://city-pulse-ai-nine.vercel.app/" target="_blank" rel="noreferrer">Live Demo <span>↗</span></a>
               </div>
             </article>
 
